@@ -1,0 +1,16 @@
+name: Minha pipeline CI
+on:
+  push:
+    branchs:
+    - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v4
+      - name: Config node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21.1.x
